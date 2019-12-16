@@ -69,9 +69,9 @@ fi
 # Create pod
 sudo podman pod create -n ironic-pod 
 
-# Pull the rhcos-downloder image to use from the release, this gets change
+# Pull the machine-os-downloder image to use from the release, this gets change
 # to use IRONIC_RHCOS_DOWNLOADER_LOCAL_IMAGE if present
-IRONIC_RHCOS_DOWNLOADER_IMAGE=$(oc adm release info --registry-config $REGISTRY_AUTH_FILE $OPENSHIFT_RELEASE_IMAGE --image-for=ironic-rhcos-downloader)
+IRONIC_RHCOS_DOWNLOADER_IMAGE=$(oc adm release info --registry-config $REGISTRY_AUTH_FILE $OPENSHIFT_RELEASE_IMAGE --image-for=ironic-machine-os-downloader)
 
 IRONIC_IMAGE=${IRONIC_LOCAL_IMAGE:-$IRONIC_IMAGE}
 IRONIC_IPA_DOWNLOADER_IMAGE=${IRONIC_IPA_DOWNLOADER_LOCAL_IMAGE:-$IRONIC_IPA_DOWNLOADER_IMAGE}
